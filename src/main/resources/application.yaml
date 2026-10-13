@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: jev-router
+  ai:
+    bedrock:
+      converse:
+        chat:
+          model: us.anthropic.claude-haiku-4-5-20251001-v1:0
+          max-tokens: 16000
+    typesafe:
+      api-key: ${TYPESAFE_API_KEY}
+      timeout: 10s
+server:
+  port: 13002
+router:
+  tiers:
+    haiku: us.anthropic.claude-haiku-4-5-20251001-v1:0
+    sonnet: us.anthropic.claude-sonnet-4-6
+    opus: us.anthropic.claude-opus-4-6-v1
+    fable: us.anthropic.claude-opus-4-6-v1  # Claude 5.x quota is 0 on this account; switch back once raised
